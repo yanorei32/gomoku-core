@@ -1,0 +1,18 @@
+[package]
+edition = "2021"
+name = "gomoku-core"
+authors = ["yanorei32"]
+description = "A simple and typesafe Gomoku core library"
+readme = "README.md"
+repository = "https://github.com/yanorei32/gomoku-core"
+license = "BSD-2-Clause"
+keywords = ["gamedev"]
+categories = ["games"]
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[dev-dependencies]
+itertools = "0.11.0"
