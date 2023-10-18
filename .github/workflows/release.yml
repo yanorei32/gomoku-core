@@ -44,9 +44,11 @@ jobs:
       - name: example build (marubatsu)
         uses: actions-rs/cargo@v1.0.3
         with:
-          command: build --example simple-marubatsu
+          command: build
+          args: --example simple-marubatsu
 
       - name: example build (gomoku)
         uses: actions-rs/cargo@v1.0.3
         with:
-          command: build --example simple-gomoku)
+          command: build
+          args: --example simple-gomoku
