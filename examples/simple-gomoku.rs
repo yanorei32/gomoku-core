@@ -62,12 +62,12 @@ fn main() {
                 session = s;
             }
             PlayState::HasWinner((player, cells)) => {
-                visualize(cells);
+                visualize(&cells);
                 println!("Winner: {player:?}");
                 break;
             }
             PlayState::RemainCellsIsZero(cells) => {
-                visualize(cells);
+                visualize(&cells);
                 println!("Draw!");
                 break;
             }
