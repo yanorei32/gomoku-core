@@ -1,10 +1,36 @@
 # Gomoku Core
-A simple and typesafe Gomoku core library written in pure rust.
+A simple and typesafe Gomoku core library written in pure Rust.
+
 This implementation doesn't have "Kinjite" currently.
+
+## Core idea
+
+```rs
+let mut session: Session<13, 13, 5> = Session::default();
+loop {
+    let c = Coordinate::try_new(ask("X"), ask("Y")).unwrap();
+
+    match session.put(c).unwrap() {
+        PlayState::Continue(s) => {
+            session = s;
+        }
+        PlayState::HasWinner((player, _cells)) => {
+            println!("Winner: {player:?}");
+            break;
+        }
+        PlayState::RemainCellsIsZero(_cells) => {
+            println!("Draw!");
+            break;
+        }
+    }
+}
+```
 
 ## Examples
 
 ### Gomoku
+
+https://github.com/yanorei32/gomoku-core/blob/master/examples/simple-gomoku.rs
 
 ```
 $ cargo run --example simple-gomoku
@@ -30,6 +56,8 @@ X?
 ```
 
 ### Marubatsu
+
+https://github.com/yanorei32/gomoku-core/blob/master/examples/simple-marubatsu.rs
 
 ```
 $ cargo run --example simple-marubatsu
