@@ -137,8 +137,8 @@ impl<const X: usize, const Y: usize, const N: usize> Session<X, Y, N> {
     }
 
     #[must_use]
-    pub fn cells(&self) -> [[Option<Player>; X]; Y] {
-        self.cells
+    pub fn cells(&self) -> &[[Option<Player>; X]; Y] {
+        &self.cells
     }
 
     #[must_use]

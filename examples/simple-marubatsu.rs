@@ -4,7 +4,7 @@ use itertools::Itertools;
 
 use gomoku_core::*;
 
-fn visualize<const X: usize, const Y: usize>(board: [[Option<Player>; X]; Y]) {
+fn visualize<const X: usize, const Y: usize>(board: &[[Option<Player>; X]; Y]) {
     let board_str = board
         .iter()
         .map(|v| {
